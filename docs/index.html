@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soccer calendars</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         max-width: 34rem; margin: 3rem auto; padding: 0 1.25rem; }
+  h1 { font-size: 1.4rem; margin-bottom: .25rem; }
+  p.sub { opacity: .7; margin-top: 0; }
+  ul { list-style: none; padding: 0; }
+  li { display: flex; align-items: baseline; gap: .75rem;
+        padding: .8rem 0; border-bottom: 1px solid rgba(128,128,128,.25); }
+  a.feed { font-weight: 600; text-decoration: none; flex: 1; }
+  a.feed:hover { text-decoration: underline; }
+  a.raw { font-size: .8rem; opacity: .6; }
+  footer { margin-top: 2rem; font-size: .85rem; opacity: .7; }
+</style>
+</head>
+<body>
+  <h1>Soccer calendars</h1>
+  <p class="sub">Tap a calendar to subscribe. Every match carries a
+     30-minute reminder.</p>
+  <ul>
+      <li><a class="feed" data-file="ac-milan.ics" href="ac-milan.ics">AC Milan</a><a class="raw" href="ac-milan.ics">download</a></li>
+  </ul>
+  <footer>
+    On iPhone, choose <strong>Subscribe</strong> and leave
+    &ldquo;Remove Alarms&rdquo; switched <strong>off</strong>, otherwise iOS
+    strips the reminders.
+  </footer>
+<script>
+  var base = location.href.replace(/[^/]*$/, '');
+  document.querySelectorAll('a.feed').forEach(function (link) {
+    link.href = 'webcal://' + base.replace(/^https?:\/\//, '') + link.dataset.file;
+  });
+</script>
+</body>
+</html>
