@@ -16,6 +16,17 @@
           "strip_description_matching": "Calendar not up to date"
         }
       ]
+    },
+    {
+      "name": "CF Montréal",
+      "slug": "cf-montreal",
+      "sources": [
+        {
+          "type": "ics",
+          "url": "https://ics.fixtur.es/v2/cf-montreal.ics",
+          "strip_description_matching": "Calendar not up to date"
+        }
+      ]
     }
   ]
 }
