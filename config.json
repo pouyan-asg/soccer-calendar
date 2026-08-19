@@ -1,0 +1,21 @@
+{
+  "alarm_minutes": 30,
+  "history_days": 21,
+  "future_days": 400,
+  "output_dir": "docs",
+  "write_combined": true,
+  "combined_name": "Soccer",
+  "teams": [
+    {
+      "name": "AC Milan",
+      "slug": "ac-milan",
+      "sources": [
+        {
+          "type": "ics",
+          "url": "https://ics.fixtur.es/v2/ac-milan.ics",
+          "strip_description_matching": "Calendar not up to date"
+        }
+      ]
+    }
+  ]
+}
